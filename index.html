@@ -112,23 +112,14 @@
     .nav-inner a {
       text-decoration: none;
       white-space: nowrap;
-      padding: 9px 15px;
-      border-radius: 12px;
-
-      /* UPDATED NAVIGATION DESIGN */
-      background: #b8946f;
-      color: #fff5df;
+      padding: 8px 12px;
+      border-radius: 20px;
+      color: #5a3c2c;
       font-size: 0.9rem;
-      font-weight: bold;
-
-      transition: 0.2s ease;
-      border: 1px solid #a9825d;
     }
 
     .nav-inner a:hover {
-      background: #96704e;
-      color: #fffaf1;
-      transform: translateY(-1px);
+      background: #ead4ae;
     }
 
     /* =========================
@@ -432,61 +423,54 @@
 
     footer {
       background: #ead4ae;
-      padding: 55px 0 30px;
+      padding: 50px 0 30px;
       border-top: 1px solid #d8bb8b;
     }
 
-    /* UPDATED FOOTER BRAND */
     .footer-brand {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      gap: 10px;
-      margin-bottom: 38px;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 30px;
     }
 
     .footer-coffee {
-      width: 58px;
-      height: 58px;
+      flex: 0 0 auto;
+      width: 54px;
+      height: 54px;
       border-radius: 50%;
       background: #fff5df;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 30px;
+      font-size: 28px;
       box-shadow: 0 4px 12px rgba(74, 48, 36, 0.12);
       text-decoration: none;
-      transition: 0.2s ease;
-    }
-
-    .footer-coffee:hover {
-      transform: translateY(-2px);
-      background: #fffaf1;
     }
 
     .footer-brand h2 {
       margin: 0;
       color: #4b2f22;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
     }
 
     .tagline {
-      margin: 2px 0 0;
+      margin: 4px 0 0;
       color: #674b39;
       font-size: 0.95rem;
-      font-weight: 500;
     }
+
+    /* THREE-COLUMN FOOTER INFORMATION */
 
     .footer-content {
       display: grid;
-      gap: 28px;
-      text-align: left;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 35px;
+      align-items: start;
     }
 
     .footer-content h3 {
-      margin: 0 0 9px;
+      margin: 0 0 10px;
       color: #4b2f22;
     }
 
@@ -499,19 +483,27 @@
     .footer-divider {
       height: 1px;
       background: rgba(74, 48, 36, 0.18);
-      margin: 32px 0 22px;
+      margin: 30px 0 22px;
     }
 
     .copyright {
       text-align: center;
       color: #604838;
       font-size: 0.9rem;
-      padding: 0 10px;
     }
 
     /* =========================
        RESPONSIVE
     ========================== */
+
+    @media (max-width: 800px) {
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 26px;
+      }
+
+    }
 
     @media (max-width: 720px) {
 
@@ -535,20 +527,10 @@
         width: 100%;
       }
 
-      .footer-content {
-        text-align: left;
+      .footer-brand {
+        align-items: flex-start;
       }
 
-      .nav-inner {
-        width: 96%;
-        padding-left: 4px;
-        padding-right: 4px;
-      }
-
-      .nav-inner a {
-        font-size: 0.86rem;
-        padding: 9px 13px;
-      }
     }
 
     @media (max-width: 480px) {
@@ -576,26 +558,22 @@
         width: 100%;
       }
 
+      .footer-brand {
+        gap: 11px;
+      }
+
       .footer-coffee {
-        width: 52px;
-        height: 52px;
-        font-size: 26px;
-      }
-
-      .footer-brand h2 {
-        font-size: 1.35rem;
-      }
-
-      .tagline {
-        font-size: 0.9rem;
-        padding: 0 8px;
+        width: 48px;
+        height: 48px;
+        font-size: 24px;
       }
 
       .copyright {
         font-size: 0.85rem;
-        line-height: 1.5;
       }
+
     }
+
   </style>
 </head>
 
@@ -659,7 +637,6 @@
           <form id="nicheForm">
 
             <div class="question">
-
               <h3>1. What are you already good at?</h3>
 
               <label class="option">
@@ -686,11 +663,9 @@
                 <input type="radio" name="q1" value="Teaching, coaching & tech">
                 Teaching, coaching & tech
               </label>
-
             </div>
 
             <div class="question">
-
               <h3>2. What type of work interests you most?</h3>
 
               <label class="option">
@@ -717,11 +692,9 @@
                 <input type="radio" name="q2" value="Technology & AI">
                 Technology & AI
               </label>
-
             </div>
 
             <div class="question">
-
               <h3>3. How much time can you give to a sideline?</h3>
 
               <label class="option">
@@ -748,11 +721,9 @@
                 <input type="radio" name="q3" value="20+ hours per week">
                 20+ hours per week
               </label>
-
             </div>
 
             <div class="question">
-
               <h3>4. What's your main goal?</h3>
 
               <label class="option">
@@ -779,11 +750,9 @@
                 <input type="radio" name="q4" value="Learn a new skill">
                 Learn a new skill
               </label>
-
             </div>
 
             <div class="question">
-
               <h3>5. What best describes your starting point?</h3>
 
               <label class="option">
@@ -810,7 +779,6 @@
                 <input type="radio" name="q5" value="I'm exploring — not sure yet">
                 I'm exploring — not sure yet
               </label>
-
             </div>
 
             <div class="actions">
@@ -858,14 +826,10 @@
     ========================== -->
 
     <section id="calculator">
-
       <div class="container">
-
         <div class="section-card">
 
-          <h2 class="section-title">
-            Global Currency Calculator
-          </h2>
+          <h2 class="section-title">Global Currency Calculator</h2>
 
           <div class="reminder">
 
@@ -880,10 +844,8 @@
           </div>
 
           <p class="section-intro">
-
             Enter your hourly rate, choose your currencies, and see estimated
             earnings automatically.
-
           </p>
 
           <div class="calculator-grid">
@@ -896,45 +858,25 @@
 
               <select id="startCurrency">
 
-                <option value="USD">
-                  USD — US Dollar
-                </option>
+                <option value="USD">USD — US Dollar</option>
 
-                <option value="PHP">
-                  PHP — Philippine Peso
-                </option>
+                <option value="PHP">PHP — Philippine Peso</option>
 
-                <option value="EUR">
-                  EUR — Euro
-                </option>
+                <option value="EUR">EUR — Euro</option>
 
-                <option value="GBP">
-                  GBP — British Pound
-                </option>
+                <option value="GBP">GBP — British Pound</option>
 
-                <option value="AUD">
-                  AUD — Australian Dollar
-                </option>
+                <option value="AUD">AUD — Australian Dollar</option>
 
-                <option value="CAD">
-                  CAD — Canadian Dollar
-                </option>
+                <option value="CAD">CAD — Canadian Dollar</option>
 
-                <option value="SGD">
-                  SGD — Singapore Dollar
-                </option>
+                <option value="SGD">SGD — Singapore Dollar</option>
 
-                <option value="AED">
-                  AED — UAE Dirham
-                </option>
+                <option value="AED">AED — UAE Dirham</option>
 
-                <option value="SAR">
-                  SAR — Saudi Riyal
-                </option>
+                <option value="SAR">SAR — Saudi Riyal</option>
 
-                <option value="JPY">
-                  JPY — Japanese Yen
-                </option>
+                <option value="JPY">JPY — Japanese Yen</option>
 
               </select>
 
@@ -948,45 +890,25 @@
 
               <select id="targetCurrency">
 
-                <option value="PHP">
-                  PHP — Philippine Peso
-                </option>
+                <option value="PHP">PHP — Philippine Peso</option>
 
-                <option value="USD">
-                  USD — US Dollar
-                </option>
+                <option value="USD">USD — US Dollar</option>
 
-                <option value="EUR">
-                  EUR — Euro
-                </option>
+                <option value="EUR">EUR — Euro</option>
 
-                <option value="GBP">
-                  GBP — British Pound
-                </option>
+                <option value="GBP">GBP — British Pound</option>
 
-                <option value="AUD">
-                  AUD — Australian Dollar
-                </option>
+                <option value="AUD">AUD — Australian Dollar</option>
 
-                <option value="CAD">
-                  CAD — Canadian Dollar
-                </option>
+                <option value="CAD">CAD — Canadian Dollar</option>
 
-                <option value="SGD">
-                  SGD — Singapore Dollar
-                </option>
+                <option value="SGD">SGD — Singapore Dollar</option>
 
-                <option value="AED">
-                  AED — UAE Dirham
-                </option>
+                <option value="AED">AED — UAE Dirham</option>
 
-                <option value="SAR">
-                  SAR — Saudi Riyal
-                </option>
+                <option value="SAR">SAR — Saudi Riyal</option>
 
-                <option value="JPY">
-                  JPY — Japanese Yen
-                </option>
+                <option value="JPY">JPY — Japanese Yen</option>
 
               </select>
 
@@ -1080,9 +1002,7 @@
           <div id="currencyResults"></div>
 
         </div>
-
       </div>
-
     </section>
 
     <!-- =========================
@@ -1090,9 +1010,7 @@
     ========================== -->
 
     <section id="learning">
-
       <div class="container">
-
         <div class="section-card">
 
           <h2 class="section-title">
@@ -1100,10 +1018,8 @@
           </h2>
 
           <p class="section-intro">
-
             Upskill, reskill, and grow — for free. Browse thousands of free
             courses on Alison, one of the world's largest free learning platforms.
-
           </p>
 
           <div class="course-card">
@@ -1153,9 +1069,7 @@
           </div>
 
         </div>
-
       </div>
-
     </section>
 
     <!-- =========================
@@ -1173,8 +1087,7 @@
           </h2>
 
           <p class="section-intro">
-            Know someone who could benefit from Tabing Guhit?
-            Share it with them.
+            Know someone who could benefit from Tabing Guhit? Share it with them.
           </p>
 
           <div class="share-copy">
@@ -1196,10 +1109,7 @@
 
           </div>
 
-          <div
-            id="copyMessage"
-            class="copy-message"
-          ></div>
+          <div id="copyMessage" class="copy-message"></div>
 
           <div class="social-links">
 
@@ -1237,7 +1147,8 @@
 
     <div class="container">
 
-      <!-- CENTERED BRAND -->
+      <!-- KEEPING THIS EXACTLY AS IT WAS -->
+
       <div class="footer-brand">
 
         <a
@@ -1249,19 +1160,23 @@
           ☕
         </a>
 
-        <h2>
-          Tabing Guhit
-        </h2>
+        <div>
 
-        <p class="tagline">
-          Work with Purpose. Live with Balance. Lead with Gratitude.
-        </p>
+          <h2>
+            Tabing Guhit
+          </h2>
+
+          <p class="tagline">
+            Work with Purpose. Live with Balance. Lead with Gratitude.
+          </p>
+
+        </div>
 
       </div>
 
-      <div class="footer-content">
+      <!-- THREE FOOTER COLUMNS -->
 
-        <!-- DISCLAIMER -->
+      <div class="footer-content">
 
         <div>
 
@@ -1279,8 +1194,6 @@
           </p>
 
         </div>
-
-        <!-- ABOUT -->
 
         <div>
 
@@ -1309,8 +1222,6 @@
           </p>
 
         </div>
-
-        <!-- LEGAL -->
 
         <div>
 
@@ -1361,7 +1272,6 @@
 
       <div class="footer-divider"></div>
 
-      <!-- VERY END / CENTERED -->
       <div class="copyright">
         © 2026 CathiesNest Digital. Free. Simple. Device-friendly.
       </div>
@@ -1393,11 +1303,16 @@
         );
 
         if (!selected) {
-          alert("Please answer all five questions before submitting.");
+
+          alert(
+            "Please answer all five questions before submitting."
+          );
+
           return;
         }
 
         answers[question] = selected.value;
+
       }
 
       let direction = "";
@@ -1557,13 +1472,14 @@
 
       if (typeof gtag === "function") {
 
-        gtag("event", "niche_results_generated", {
-
-          niche_direction: direction,
-
-          goal: goal
-
-        });
+        gtag(
+          "event",
+          "niche_results_generated",
+          {
+            niche_direction: direction,
+            goal: goal
+          }
+        );
 
       }
 
@@ -1793,13 +1709,14 @@
 
       if (typeof gtag === "function") {
 
-        gtag("event", "currency_calculation", {
-
-          starting_currency: startCurrency,
-
-          target_currency: targetCurrency
-
-        });
+        gtag(
+          "event",
+          "currency_calculation",
+          {
+            starting_currency: startCurrency,
+            target_currency: targetCurrency
+          }
+        );
 
       }
 
@@ -1871,7 +1788,10 @@
 
       if (typeof gtag === "function") {
 
-        gtag("event", "share_link_copied");
+        gtag(
+          "event",
+          "share_link_copied"
+        );
 
       }
 
@@ -1885,11 +1805,13 @@
 
       if (typeof gtag === "function") {
 
-        gtag("event", "alison_click", {
-
-          link_type: type
-
-        });
+        gtag(
+          "event",
+          "alison_click",
+          {
+            link_type: type
+          }
+        );
 
       }
 
