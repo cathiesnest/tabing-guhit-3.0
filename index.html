@@ -112,14 +112,23 @@
     .nav-inner a {
       text-decoration: none;
       white-space: nowrap;
-      padding: 8px 12px;
-      border-radius: 20px;
-      color: #5a3c2c;
+      padding: 9px 15px;
+      border-radius: 12px;
+
+      /* UPDATED NAVIGATION DESIGN */
+      background: #b8946f;
+      color: #fff5df;
       font-size: 0.9rem;
+      font-weight: bold;
+
+      transition: 0.2s ease;
+      border: 1px solid #a9825d;
     }
 
     .nav-inner a:hover {
-      background: #ead4ae;
+      background: #96704e;
+      color: #fffaf1;
+      transform: translateY(-1px);
     }
 
     /* =========================
@@ -423,50 +432,61 @@
 
     footer {
       background: #ead4ae;
-      padding: 50px 0 30px;
+      padding: 55px 0 30px;
       border-top: 1px solid #d8bb8b;
     }
 
+    /* UPDATED FOOTER BRAND */
     .footer-brand {
       display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      margin-bottom: 30px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 10px;
+      margin-bottom: 38px;
     }
 
     .footer-coffee {
-      flex: 0 0 auto;
-      width: 54px;
-      height: 54px;
+      width: 58px;
+      height: 58px;
       border-radius: 50%;
       background: #fff5df;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 28px;
+      font-size: 30px;
       box-shadow: 0 4px 12px rgba(74, 48, 36, 0.12);
       text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .footer-coffee:hover {
+      transform: translateY(-2px);
+      background: #fffaf1;
     }
 
     .footer-brand h2 {
       margin: 0;
       color: #4b2f22;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
     }
 
     .tagline {
-      margin: 4px 0 0;
+      margin: 2px 0 0;
       color: #674b39;
       font-size: 0.95rem;
+      font-weight: 500;
     }
 
     .footer-content {
       display: grid;
-      gap: 24px;
+      gap: 28px;
+      text-align: left;
     }
 
     .footer-content h3 {
-      margin-bottom: 8px;
+      margin: 0 0 9px;
       color: #4b2f22;
     }
 
@@ -479,13 +499,14 @@
     .footer-divider {
       height: 1px;
       background: rgba(74, 48, 36, 0.18);
-      margin: 30px 0 22px;
+      margin: 32px 0 22px;
     }
 
     .copyright {
       text-align: center;
       color: #604838;
       font-size: 0.9rem;
+      padding: 0 10px;
     }
 
     /* =========================
@@ -493,6 +514,7 @@
     ========================== */
 
     @media (max-width: 720px) {
+
       header {
         padding-top: 30px;
       }
@@ -513,12 +535,24 @@
         width: 100%;
       }
 
-      .footer-brand {
-        align-items: flex-start;
+      .footer-content {
+        text-align: left;
+      }
+
+      .nav-inner {
+        width: 96%;
+        padding-left: 4px;
+        padding-right: 4px;
+      }
+
+      .nav-inner a {
+        font-size: 0.86rem;
+        padding: 9px 13px;
       }
     }
 
     @media (max-width: 480px) {
+
       .container {
         width: 94%;
       }
@@ -542,14 +576,24 @@
         width: 100%;
       }
 
-      .footer-brand {
-        gap: 11px;
+      .footer-coffee {
+        width: 52px;
+        height: 52px;
+        font-size: 26px;
       }
 
-      .footer-coffee {
-        width: 48px;
-        height: 48px;
-        font-size: 24px;
+      .footer-brand h2 {
+        font-size: 1.35rem;
+      }
+
+      .tagline {
+        font-size: 0.9rem;
+        padding: 0 8px;
+      }
+
+      .copyright {
+        font-size: 0.85rem;
+        line-height: 1.5;
       }
     }
   </style>
@@ -581,11 +625,17 @@
 
   <nav>
     <div class="nav-inner">
+
       <a href="#niche">Find Your Niche</a>
+
       <a href="#calculator">Know Your Value</a>
+
       <a href="#learning">Learning Shelf</a>
+
       <a href="#share">Share & Refer</a>
+
       <a href="#about">About</a>
+
     </div>
   </nav>
 
@@ -609,6 +659,7 @@
           <form id="nicheForm">
 
             <div class="question">
+
               <h3>1. What are you already good at?</h3>
 
               <label class="option">
@@ -635,9 +686,11 @@
                 <input type="radio" name="q1" value="Teaching, coaching & tech">
                 Teaching, coaching & tech
               </label>
+
             </div>
 
             <div class="question">
+
               <h3>2. What type of work interests you most?</h3>
 
               <label class="option">
@@ -664,9 +717,11 @@
                 <input type="radio" name="q2" value="Technology & AI">
                 Technology & AI
               </label>
+
             </div>
 
             <div class="question">
+
               <h3>3. How much time can you give to a sideline?</h3>
 
               <label class="option">
@@ -693,9 +748,11 @@
                 <input type="radio" name="q3" value="20+ hours per week">
                 20+ hours per week
               </label>
+
             </div>
 
             <div class="question">
+
               <h3>4. What's your main goal?</h3>
 
               <label class="option">
@@ -722,9 +779,11 @@
                 <input type="radio" name="q4" value="Learn a new skill">
                 Learn a new skill
               </label>
+
             </div>
 
             <div class="question">
+
               <h3>5. What best describes your starting point?</h3>
 
               <label class="option">
@@ -751,16 +810,27 @@
                 <input type="radio" name="q5" value="I'm exploring — not sure yet">
                 I'm exploring — not sure yet
               </label>
+
             </div>
 
             <div class="actions">
-              <button type="button" class="btn btn-primary" onclick="findNiche()">
+
+              <button
+                type="button"
+                class="btn btn-primary"
+                onclick="findNiche()"
+              >
                 Submit
               </button>
 
-              <button type="button" class="btn btn-secondary" onclick="clearNiche()">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                onclick="clearNiche()"
+              >
                 Clear
               </button>
+
             </div>
 
           </form>
@@ -768,6 +838,7 @@
           <div id="nicheResult" class="result"></div>
 
           <div class="red-flag">
+
             <strong>🚩 Never pay to get a job.</strong>
 
             <br>
@@ -775,6 +846,7 @@
             A legitimate remote job should not require a joining fee,
             recruitment fee, application fee, or payment simply to be hired.
             Verify the employer independently.
+
           </div>
 
         </div>
@@ -786,61 +858,142 @@
     ========================== -->
 
     <section id="calculator">
+
       <div class="container">
+
         <div class="section-card">
 
-          <h2 class="section-title">Global Currency Calculator</h2>
+          <h2 class="section-title">
+            Global Currency Calculator
+          </h2>
 
           <div class="reminder">
+
             <strong>
               Don't automatically accept a low-ball offer just because you need a sideline.
             </strong>
+
             <br>
+
             Starting small is okay. Undervaluing yourself is not.
+
           </div>
 
           <p class="section-intro">
+
             Enter your hourly rate, choose your currencies, and see estimated
             earnings automatically.
+
           </p>
 
           <div class="calculator-grid">
 
             <div class="field">
-              <label for="startCurrency">Starting Currency</label>
+
+              <label for="startCurrency">
+                Starting Currency
+              </label>
 
               <select id="startCurrency">
-                <option value="USD">USD — US Dollar</option>
-                <option value="PHP">PHP — Philippine Peso</option>
-                <option value="EUR">EUR — Euro</option>
-                <option value="GBP">GBP — British Pound</option>
-                <option value="AUD">AUD — Australian Dollar</option>
-                <option value="CAD">CAD — Canadian Dollar</option>
-                <option value="SGD">SGD — Singapore Dollar</option>
-                <option value="AED">AED — UAE Dirham</option>
-                <option value="SAR">SAR — Saudi Riyal</option>
-                <option value="JPY">JPY — Japanese Yen</option>
+
+                <option value="USD">
+                  USD — US Dollar
+                </option>
+
+                <option value="PHP">
+                  PHP — Philippine Peso
+                </option>
+
+                <option value="EUR">
+                  EUR — Euro
+                </option>
+
+                <option value="GBP">
+                  GBP — British Pound
+                </option>
+
+                <option value="AUD">
+                  AUD — Australian Dollar
+                </option>
+
+                <option value="CAD">
+                  CAD — Canadian Dollar
+                </option>
+
+                <option value="SGD">
+                  SGD — Singapore Dollar
+                </option>
+
+                <option value="AED">
+                  AED — UAE Dirham
+                </option>
+
+                <option value="SAR">
+                  SAR — Saudi Riyal
+                </option>
+
+                <option value="JPY">
+                  JPY — Japanese Yen
+                </option>
+
               </select>
+
             </div>
 
             <div class="field">
-              <label for="targetCurrency">Target Currency</label>
+
+              <label for="targetCurrency">
+                Target Currency
+              </label>
 
               <select id="targetCurrency">
-                <option value="PHP">PHP — Philippine Peso</option>
-                <option value="USD">USD — US Dollar</option>
-                <option value="EUR">EUR — Euro</option>
-                <option value="GBP">GBP — British Pound</option>
-                <option value="AUD">AUD — Australian Dollar</option>
-                <option value="CAD">CAD — Canadian Dollar</option>
-                <option value="SGD">SGD — Singapore Dollar</option>
-                <option value="AED">AED — UAE Dirham</option>
-                <option value="SAR">SAR — Saudi Riyal</option>
-                <option value="JPY">JPY — Japanese Yen</option>
+
+                <option value="PHP">
+                  PHP — Philippine Peso
+                </option>
+
+                <option value="USD">
+                  USD — US Dollar
+                </option>
+
+                <option value="EUR">
+                  EUR — Euro
+                </option>
+
+                <option value="GBP">
+                  GBP — British Pound
+                </option>
+
+                <option value="AUD">
+                  AUD — Australian Dollar
+                </option>
+
+                <option value="CAD">
+                  CAD — Canadian Dollar
+                </option>
+
+                <option value="SGD">
+                  SGD — Singapore Dollar
+                </option>
+
+                <option value="AED">
+                  AED — UAE Dirham
+                </option>
+
+                <option value="SAR">
+                  SAR — Saudi Riyal
+                </option>
+
+                <option value="JPY">
+                  JPY — Japanese Yen
+                </option>
+
               </select>
+
             </div>
 
             <div class="field">
+
               <label for="hourlyRate">
                 Enter Hourly Rate
               </label>
@@ -852,9 +1005,11 @@
                 min="0"
                 placeholder="e.g. 8.55"
               >
+
             </div>
 
             <div class="field">
+
               <label for="hoursPerDay">
                 Enter Number of Hours per day
               </label>
@@ -866,9 +1021,11 @@
                 min="0"
                 placeholder="e.g. 8"
               >
+
             </div>
 
             <div class="field">
+
               <label for="daysPerWeek">
                 Enter Number of Days per week
               </label>
@@ -880,9 +1037,11 @@
                 min="0"
                 placeholder="e.g. 5"
               >
+
             </div>
 
             <div class="field">
+
               <label for="monthsPerYear">
                 Enter Working months/Year
               </label>
@@ -895,24 +1054,35 @@
                 max="12"
                 placeholder="e.g. 12"
               >
+
             </div>
 
           </div>
 
           <div class="calculator-actions">
-            <button class="btn btn-primary" onclick="calculateCurrency()">
+
+            <button
+              class="btn btn-primary"
+              onclick="calculateCurrency()"
+            >
               Calculate
             </button>
 
-            <button class="btn btn-secondary" onclick="clearCalculator()">
+            <button
+              class="btn btn-secondary"
+              onclick="clearCalculator()"
+            >
               Clear
             </button>
+
           </div>
 
           <div id="currencyResults"></div>
 
         </div>
+
       </div>
+
     </section>
 
     <!-- =========================
@@ -920,18 +1090,27 @@
     ========================== -->
 
     <section id="learning">
+
       <div class="container">
+
         <div class="section-card">
 
-          <h2 class="section-title">Learning Shelf</h2>
+          <h2 class="section-title">
+            Learning Shelf
+          </h2>
 
           <p class="section-intro">
+
             Upskill, reskill, and grow — for free. Browse thousands of free
             courses on Alison, one of the world's largest free learning platforms.
+
           </p>
 
           <div class="course-card">
-            <h3>Explore FREE Courses</h3>
+
+            <h3>
+              Explore FREE Courses
+            </h3>
 
             <p>
               Discover courses across many subjects and career paths.
@@ -946,11 +1125,14 @@
             >
               Explore FREE Courses
             </a>
+
           </div>
 
           <div class="course-card">
 
-            <h3>Alison Career Guide</h3>
+            <h3>
+              Alison Career Guide
+            </h3>
 
             <p>
               The career you want tomorrow depends on the skills you build today.
@@ -971,7 +1153,9 @@
           </div>
 
         </div>
+
       </div>
+
     </section>
 
     <!-- =========================
@@ -979,13 +1163,18 @@
     ========================== -->
 
     <section id="share">
+
       <div class="container">
+
         <div class="section-card share-box">
 
-          <h2 class="section-title">Share & Refer</h2>
+          <h2 class="section-title">
+            Share & Refer
+          </h2>
 
           <p class="section-intro">
-            Know someone who could benefit from Tabing Guhit? Share it with them.
+            Know someone who could benefit from Tabing Guhit?
+            Share it with them.
           </p>
 
           <div class="share-copy">
@@ -1007,7 +1196,10 @@
 
           </div>
 
-          <div id="copyMessage" class="copy-message"></div>
+          <div
+            id="copyMessage"
+            class="copy-message"
+          ></div>
 
           <div class="social-links">
 
@@ -1030,7 +1222,9 @@
           </div>
 
         </div>
+
       </div>
+
     </section>
 
   </main>
@@ -1043,6 +1237,7 @@
 
     <div class="container">
 
+      <!-- CENTERED BRAND -->
       <div class="footer-brand">
 
         <a
@@ -1054,20 +1249,25 @@
           ☕
         </a>
 
-        <div>
-          <h2>Tabing Guhit</h2>
+        <h2>
+          Tabing Guhit
+        </h2>
 
-          <p class="tagline">
-            Work with Purpose. Live with Balance. Lead with Gratitude.
-          </p>
-        </div>
+        <p class="tagline">
+          Work with Purpose. Live with Balance. Lead with Gratitude.
+        </p>
 
       </div>
 
       <div class="footer-content">
 
+        <!-- DISCLAIMER -->
+
         <div>
-          <h3>Disclaimer</h3>
+
+          <h3>
+            Disclaimer
+          </h3>
 
           <p>
             Tabing Guhit is not an employer, recruitment agency, financial
@@ -1077,13 +1277,21 @@
             guarantee employment, income, or financial results. You remain
             responsible for your own decisions.
           </p>
+
         </div>
 
+        <!-- ABOUT -->
+
         <div>
-          <h3>About</h3>
+
+          <h3>
+            About
+          </h3>
 
           <p>
-            <strong>Use Tabing Guhit thoughtfully.</strong>
+            <strong>
+              Use Tabing Guhit thoughtfully.
+            </strong>
           </p>
 
           <p>
@@ -1099,10 +1307,16 @@
             of exchange rates, taxes, fees, unpaid time, contract terms,
             and other circumstances.
           </p>
+
         </div>
 
+        <!-- LEGAL -->
+
         <div>
-          <h3>Legal, privacy & disclosure</h3>
+
+          <h3>
+            Legal, privacy & disclosure
+          </h3>
 
           <p>
             Tabing Guhit itself is not an Alison Affiliate Partner.
@@ -1147,6 +1361,7 @@
 
       <div class="footer-divider"></div>
 
+      <!-- VERY END / CENTERED -->
       <div class="copyright">
         © 2026 CathiesNest Digital. Free. Simple. Device-friendly.
       </div>
@@ -1197,7 +1412,8 @@
 
       if (skill === "Organizing & admin work") {
 
-        direction = "Virtual Assistance & Administrative Support";
+        direction =
+          "Virtual Assistance & Administrative Support";
 
         explanation =
           "Your organizing skills can translate well into virtual assistance, administrative support, scheduling, research, documentation, and operations support.";
@@ -1233,6 +1449,7 @@
 
         explanation =
           "Your interest in teaching, coaching, technology, or AI can lead toward online education, digital assistance, AI-supported services, tutoring, or technology-focused freelance work.";
+
       }
 
       if (goal === "Find remote work") {
@@ -1259,6 +1476,7 @@
 
         nextStep =
           "Because extra income is your goal, start with a realistic service or skill that matches your current abilities rather than trying to learn everything at once.";
+
       }
 
       let timeAdvice = "";
@@ -1282,26 +1500,44 @@
 
         timeAdvice =
           "With 10+ hours available, you can build skills more intensively and begin testing services, freelance work, or a small online offer.";
+
       }
 
-      const result = document.getElementById("nicheResult");
+      const result =
+        document.getElementById("nicheResult");
 
       result.innerHTML = `
+
         <h3>Your Suggested Direction</h3>
 
         <h2>${direction}</h2>
 
         <p>${explanation}</p>
 
-        <p><strong>Your interests:</strong> ${interest}</p>
+        <p>
+          <strong>Your interests:</strong>
+          ${interest}
+        </p>
 
-        <p><strong>Your available time:</strong> ${time}</p>
+        <p>
+          <strong>Your available time:</strong>
+          ${time}
+        </p>
 
-        <p><strong>Your starting point:</strong> ${startingPoint}</p>
+        <p>
+          <strong>Your starting point:</strong>
+          ${startingPoint}
+        </p>
 
-        <p><strong>Suggested next step:</strong> ${nextStep}</p>
+        <p>
+          <strong>Suggested next step:</strong>
+          ${nextStep}
+        </p>
 
-        <p><strong>Time strategy:</strong> ${timeAdvice}</p>
+        <p>
+          <strong>Time strategy:</strong>
+          ${timeAdvice}
+        </p>
 
         <p>
           <strong>Remember:</strong>
@@ -1309,6 +1545,7 @@
           Start with one practical step, learn as you go, and reassess as
           your skills and circumstances develop.
         </p>
+
       `;
 
       result.style.display = "block";
@@ -1321,20 +1558,28 @@
       if (typeof gtag === "function") {
 
         gtag("event", "niche_results_generated", {
+
           niche_direction: direction,
+
           goal: goal
+
         });
 
       }
+
     }
 
     function clearNiche() {
 
-      document.getElementById("nicheForm").reset();
+      document
+        .getElementById("nicheForm")
+        .reset();
 
-      const result = document.getElementById("nicheResult");
+      const result =
+        document.getElementById("nicheResult");
 
       result.style.display = "none";
+
       result.innerHTML = "";
 
     }
@@ -1376,16 +1621,24 @@
         document.getElementById("targetCurrency").value;
 
       const hourlyRate =
-        parseFloat(document.getElementById("hourlyRate").value);
+        parseFloat(
+          document.getElementById("hourlyRate").value
+        );
 
       const hoursPerDay =
-        parseFloat(document.getElementById("hoursPerDay").value);
+        parseFloat(
+          document.getElementById("hoursPerDay").value
+        );
 
       const daysPerWeek =
-        parseFloat(document.getElementById("daysPerWeek").value);
+        parseFloat(
+          document.getElementById("daysPerWeek").value
+        );
 
       const monthsPerYear =
-        parseFloat(document.getElementById("monthsPerYear").value);
+        parseFloat(
+          document.getElementById("monthsPerYear").value
+        );
 
       if (
         !Number.isFinite(hourlyRate) ||
@@ -1399,18 +1652,24 @@
         monthsPerYear > 12
       ) {
 
-        alert("Please enter valid numbers in all calculator fields.");
+        alert(
+          "Please enter valid numbers in all calculator fields."
+        );
 
         return;
+
       }
 
-      const startToUSD = ratesToUSD[startCurrency];
+      const startToUSD =
+        ratesToUSD[startCurrency];
 
-      const targetFromUSD = ratesToUSD[targetCurrency];
+      const targetFromUSD =
+        ratesToUSD[targetCurrency];
 
       const convert = value => {
 
-        const usdValue = value * startToUSD;
+        const usdValue =
+          value * startToUSD;
 
         return usdValue / targetFromUSD;
 
@@ -1418,13 +1677,17 @@
 
       const hourly = hourlyRate;
 
-      const daily = hourlyRate * hoursPerDay;
+      const daily =
+        hourlyRate * hoursPerDay;
 
-      const weekly = daily * daysPerWeek;
+      const weekly =
+        daily * daysPerWeek;
 
-      const monthly = weekly * 4.33;
+      const monthly =
+        weekly * 4.33;
 
-      const annual = monthly * monthsPerYear;
+      const annual =
+        monthly * monthsPerYear;
 
       const format = value => {
 
@@ -1438,7 +1701,9 @@
 
       };
 
-      document.getElementById("currencyResults").innerHTML = `
+      document.getElementById(
+        "currencyResults"
+      ).innerHTML = `
 
         <div class="table-wrap">
 
@@ -1461,33 +1726,53 @@
             <tbody>
 
               <tr>
+
                 <td>Hourly</td>
+
                 <td>${format(hourly)}</td>
+
                 <td>${format(convert(hourly))}</td>
+
               </tr>
 
               <tr>
+
                 <td>Daily</td>
+
                 <td>${format(daily)}</td>
+
                 <td>${format(convert(daily))}</td>
+
               </tr>
 
               <tr>
+
                 <td>Weekly</td>
+
                 <td>${format(weekly)}</td>
+
                 <td>${format(convert(weekly))}</td>
+
               </tr>
 
               <tr>
+
                 <td>Monthly</td>
+
                 <td>${format(monthly)}</td>
+
                 <td>${format(convert(monthly))}</td>
+
               </tr>
 
               <tr>
+
                 <td>Annual</td>
+
                 <td>${format(annual)}</td>
+
                 <td>${format(convert(annual))}</td>
+
               </tr>
 
             </tbody>
@@ -1503,6 +1788,7 @@
           fees, payment fees, exchange-rate changes, and contract terms.
 
         </p>
+
       `;
 
       if (typeof gtag === "function") {
@@ -1521,15 +1807,25 @@
 
     function clearCalculator() {
 
-      document.getElementById("hourlyRate").value = "";
+      document.getElementById(
+        "hourlyRate"
+      ).value = "";
 
-      document.getElementById("hoursPerDay").value = "";
+      document.getElementById(
+        "hoursPerDay"
+      ).value = "";
 
-      document.getElementById("daysPerWeek").value = "";
+      document.getElementById(
+        "daysPerWeek"
+      ).value = "";
 
-      document.getElementById("monthsPerYear").value = "";
+      document.getElementById(
+        "monthsPerYear"
+      ).value = "";
 
-      document.getElementById("currencyResults").innerHTML = "";
+      document.getElementById(
+        "currencyResults"
+      ).innerHTML = "";
 
     }
 
@@ -1542,7 +1838,9 @@
       const link =
         window.location.href.split("#")[0];
 
-      document.getElementById("shareLink").value = link;
+      document.getElementById(
+        "shareLink"
+      ).value = link;
 
     }
 
@@ -1566,7 +1864,9 @@
 
       }
 
-      document.getElementById("copyMessage").innerHTML =
+      document.getElementById(
+        "copyMessage"
+      ).innerHTML =
         "☕ Link copied successfully!";
 
       if (typeof gtag === "function") {
