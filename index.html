@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tabing Guhit — A Gentle Digital Toolbox by CathiesNest Digital. Discover your niche, estimate your freelance earnings, and explore free learning resources.">
+  <meta name="theme-color" content="#6f4e37">
+  <title>Tabing Guhit 3.0 | CathiesNest Digital</title>
+
+  <style>
+    :root {
+      --espresso: #5b3a29;
+      --coffee: #6f4e37;
+      --latte: #a67c52;
+      --beige: #eadcc8;
+      --cream: #fffaf0;
+      --milk: #f7f0e3;
+      --light-yellow: #f8e8b0;
+      --soft-brown: #8b6f5a;
+      --text: #3f3027;
+      --white: #ffffff;
+      --success: #52745b;
+      --danger: #9b3d32;
+      --shadow: 0 8px 24px rgba(91, 58, 41, 0.10);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(248, 232, 176, 0.45), transparent 28%),
+        linear-gradient(180deg, var(--cream) 0%, var(--milk) 100%);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      padding: 24px 0 18px;
+      border-bottom: 1px solid rgba(111, 78, 55, 0.12);
+      background: rgba(255, 250, 240, 0.92);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .coffee-logo {
+      width: 58px;
+      height: 58px;
+      flex: 0 0 58px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--light-yellow);
+      font-size: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .brand h1 {
+      margin: 0;
+      color: var(--espresso);
+      font-size: clamp(1.65rem, 4vw, 2.25rem);
+      letter-spacing: 0.02em;
+    }
+
+    .brand p {
+      margin: 2px 0 0;
+      color: var(--soft-brown);
+      font-size: 0.95rem;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 52px 0 34px;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: var(--light-yellow);
+      color: var(--espresso);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .hero h2 {
+      max-width: 780px;
+      margin: 0 auto 14px;
+      color: var(--espresso);
+      font-size: clamp(2rem, 6vw, 3.4rem);
+      line-height: 1.15;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--soft-brown);
+      font-size: clamp(1rem, 2vw, 1.12rem);
+    }
+
+    /* Sections */
+    section {
+      padding: 28px 0;
+    }
+
+    .section-card {
+      background: rgba(255, 250, 240, 0.88);
+      border: 1px solid rgba(111, 78, 55, 0.12);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(20px, 4vw, 38px);
+      margin-bottom: 26px;
+    }
+
+    .section-heading {
+      margin-bottom: 25px;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 7px;
+      color: var(--espresso);
+      font-size: clamp(1.55rem, 4vw, 2.2rem);
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--soft-brown);
+    }
+
+    /* Reminder */
+    .reminder {
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+      padding: 17px;
+      margin: 20px 0 28px;
+      border-radius: 14px;
+      background: #fff4e8;
+      border-left: 5px solid var(--danger);
+    }
+
+    .reminder-icon {
+      font-size: 1.35rem;
+      flex: 0 0 auto;
+    }
+
+    .reminder strong {
+      color: var(--danger);
+    }
+
+    .reminder p {
+      margin: 3px 0 0;
+      font-size: 0.95rem;
+    }
+
+    /* Questions */
+    .question {
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(111, 78, 55, 0.12);
+    }
+
+    .question:last-of-type {
+      border-bottom: none;
+    }
+
+    .question h3 {
+      margin: 0 0 14px;
+      color: var(--espresso);
+      font-size: 1.05rem;
+    }
+
+    .option {
+      display: block;
+      margin: 9px 0;
+      padding: 12px 14px;
+      border: 1px solid rgba(111, 78, 55, 0.16);
+      border-radius: 12px;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.45);
+      transition: 0.2s ease;
+    }
+
+    .option:hover {
+      background: var(--beige);
+    }
+
+    .option input {
+      margin-right: 9px;
+      accent-color: var(--coffee);
+    }
+
+    /* Buttons */
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+      margin-top: 25px;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 12px;
+      padding: 13px 19px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+      min-height: 46px;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn-primary {
+      background: var(--coffee);
+      color: var(--white);
+    }
+
+    .btn-secondary {
+      background: var(--beige);
+      color: var(--espresso);
+    }
+
+    .btn-light {
+      background: var(--light-yellow);
+      color: var(--espresso);
+    }
+
+    .btn-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+
+    /* Niche result */
+    .result {
+      display: none;
+      margin-top: 28px;
+      padding: 24px;
+      border-radius: 15px;
+      background: #f6ecdc;
+      border: 1px solid rgba(111, 78, 55, 0.14);
+    }
+
+    .result.show {
+      display: block;
+    }
+
+    .result h3 {
+      margin-top: 0;
+      color: var(--espresso);
+    }
+
+    .result .result-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .result ul {
+      padding-left: 20px;
+    }
+
+    .result-tip {
+      margin-top: 15px;
+      padding: 13px;
+      border-radius: 10px;
+      background: rgba(248, 232, 176, 0.55);
+    }
+
+    /* Calculator */
+    .calculator-note {
+      margin-bottom: 22px;
+      padding: 16px;
+      border-radius: 13px;
+      background: var(--light-yellow);
+      color: var(--espresso);
+    }
+
+    .calculator-note strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .calculator-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .field label {
+      font-weight: 700;
+      color: var(--espresso);
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid rgba(111, 78, 55, 0.2);
+      border-radius: 11px;
+      background: var(--white);
+      color: var(--text);
+      outline: none;
+    }
+
+    .field input:focus,
+    .field select:focus {
+      border-color: var(--latte);
+      box-shadow: 0 0 0 3px rgba(166, 124, 82, 0.14);
+    }
+
+    .currency-pair {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .helper {
+      color: var(--soft-brown);
+      font-size: 0.86rem;
+    }
+
+    .calculator-results {
+      display: none;
+      margin-top: 28px;
+    }
+
+    .calculator-results.show {
+      display: block;
+    }
+
+    .results-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border: 1px solid rgba(111, 78, 55, 0.12);
+      border-radius: 13px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 580px;
+      border-collapse: collapse;
+      background: var(--white);
+    }
+
+    th,
+    td {
+      padding: 13px 14px;
+      text-align: left;
+      border-bottom: 1px solid rgba(111, 78, 55, 0.1);
+    }
+
+    th {
+      background: var(--beige);
+      color: var(--espresso);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .disclaimer {
+      margin-top: 14px;
+      color: var(--soft-brown);
+      font-size: 0.84rem;
+    }
+
+    /* Learning */
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .learning-card {
+      padding: 22px;
+      border-radius: 14px;
+      background: var(--milk);
+      border: 1px solid rgba(111, 78, 55, 0.12);
+    }
+
+    .learning-card .icon {
+      font-size: 1.8rem;
+    }
+
+    .learning-card h3 {
+      color: var(--espresso);
+      margin: 8px 0;
+    }
+
+    .learning-card p {
+      color: var(--soft-brown);
+      margin-top: 0;
+    }
+
+    /* Share */
+    .share-box {
+      text-align: center;
+      padding: 10px;
+    }
+
+    .copy-status {
+      min-height: 28px;
+      margin-top: 13px;
+      font-weight: 700;
+      color: var(--success);
+    }
+
+    .copied-cup {
+      display: none;
+      font-size: 2rem;
+      margin-top: 5px;
+      animation: pop 0.35s ease;
+    }
+
+    .copied-cup.show {
+      display: block;
+    }
+
+    @keyframes pop {
+      0% {
+        transform: scale(0.7);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .social-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 11px;
+      margin-top: 20px;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 25px;
+      padding: 42px 0;
+      text-align: center;
+      background: var(--espresso);
+      color: var(--cream);
+    }
+
+    .footer-logo {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 13px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--light-yellow);
+      color: var(--espresso);
+      font-size: 32px;
+    }
+
+    footer h2 {
+      margin: 0 0 8px;
+      font-size: 1.55rem;
+    }
+
+    footer p {
+      margin: 5px 0;
+      color: #f2dfc7;
+    }
+
+    .footer-small {
+      margin-top: 17px;
+      font-size: 0.88rem;
+      opacity: 0.9;
+    }
+
+    /* Mobile */
+    @media (max-width: 700px) {
+      .container {
+        width: min(100% - 22px, 1120px);
+      }
+
+      header {
+        padding: 18px 0;
+      }
+
+      .coffee-logo {
+        width: 50px;
+        height: 50px;
+        flex-basis: 50px;
+        font-size: 25px;
+      }
+
+      .hero {
+        padding: 36px 0 20px;
+      }
+
+      section {
+        padding: 18px 0;
+      }
+
+      .section-card {
+        padding: 20px 16px;
+        border-radius: 15px;
+      }
+
+      .calculator-grid,
+      .currency-pair,
+      .learning-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .currency-pair {
+        grid-column: auto;
+      }
+
+      .button-row {
+        flex-direction: column;
+      }
+
+      .button-row .btn,
+      .social-buttons .btn {
+        width: 100%;
+      }
+
+      .reminder {
+        padding: 14px;
+      }
+
+      .option {
+        padding: 13px 12px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .brand p {
+        font-size: 0.83rem;
+      }
+
+      .hero h2 {
+        font-size: 1.9rem;
+      }
+
+      .section-heading h2 {
+        font-size: 1.45rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <div class="brand">
+        <div class="coffee-logo" aria-hidden="true">☕</div>
+        <div>
+          <h1>Tabing Guhit</h1>
+          <p>Powered by CathiesNest Digital</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container">
+        <span class="hero-badge">☕ A Gentle Digital Toolbox</span>
+        <h2>Work with Purpose.<br>Live with Balance.</h2>
+        <p>
+          A simple space to discover your direction, understand your value,
+          and build skills for the future.
+        </p>
+      </div>
+    </section>
+
+    <!-- FIND YOUR NICHE -->
+    <section id="find-your-niche">
+      <div class="container">
+        <div class="section-card">
+
+          <div class="section-heading">
+            <h2>☕ Find Your Niche</h2>
+            <p>
+              Answer five simple questions to discover practical directions
+              that may fit your skills, interests, time, and goals.
+            </p>
+          </div>
+
+          <div class="reminder">
+            <div class="reminder-icon">🚩</div>
+            <div>
+              <strong>Never pay to get a job.</strong>
+              <p>
+                A legitimate remote job should not require a joining fee,
+                recruitment fee, application fee, or payment simply to be hired.
+                Verify the employer independently.
+              </p>
+            </div>
+          </div>
+
+          <form id="nicheForm">
+
+            <div class="question">
+              <h3>1. What are you already good at?</h3>
+
+              <label class="option">
+                <input type="radio" name="q1" value="admin">
+                Organizing &amp; admin work
+              </label>
+
+              <label class="option">
+                <input type="radio" name="q1" value="customer">
+                Customer service &amp; communication
+              </label>
+
+              <label class="option">
+                <input type="radio" name="q1" value="sales">
+                Sales &amp; marketing
+              </label>
+
+              <label class="option">
+                <input type="radio" name="q1" value="creative">
+                Design &amp; creative work
+              </label>
+
+              <label class="option">
+                <input type="radio" name="q1" value="tech">
+                Teaching, coaching &amp; tech
+              </label>
+            </div>
+
+            <div class="question">
+              <h3>2. What type of work interests you most?</h3>
+
+              <label class="option">
+                <input type="radio" name="q2" value="people">
+                Working with people
+              </label>
+
+              <label class="option">
+                <input type="radio" name="q2" value="behind">
+                Working behind the scenes
+              </label>
+
+              <label class="option">
+                <input type="radio" name="q2" value="creative">
+                Creative work
+              </label>
+
+              <label class="option">
+                <input type="radio" name="q2" value="business">
+                Online business
+              </label>
+
+              <label class="option">
+                <input type="radio" name="q2" value="technology">
+                Technology &amp; AI
+              </label>
+            </div>
+
+            <div class="question">
+              <h3>3. How much time can you give to a sideline?</h3>
+
+              <label class="option">
+                <input type="radio" name="q3" value="under1">
+                Less than 1 hour per week
+              </label>
+
+              <label class="option">
+                <input type="radio" name="q3" value="1to5">
+                1–5 hours per week
+              </label>
+
+              <label class="option">
+                <input type="radio" name="q3" value="5to10">
+                5–10 hours per week
+              </label>
+
+              <label class="option">
+                <input type="radio" name="q3" value="10to20">
+                10–20 hours per week
+              </label>
+
+              <label class="option">
+                <input type="radio" name="q3" value="20plus">
+                20+ hours per week
+              </label>
+            </div>
+
+            <div class="question">
+              <h3>4. What's your main goal?</h3>
+
+              <label class="option">
+                <input type="radio" name="q4" value="extra">
+                Earn extra income
+              </label>
+
+              <label class="option">
+                <input type="radio" name="q4" value="remote">
+                Find remote work
+              </label>
+
+              <label class="option">
+                <input type="radio" name="q4" value="freelance">
+                Build a freelance career
+              </label>
+
+              <label class="option">
+                <input type="radio" name="q4" value="business">
+                Start a small online business
+              </label>
+
+              <label class="option">
+                <input type="radio" name="q4" value="learn">
+                Learn a new skill
+              </label>
+            </div>
+
+            <div class="question">
+              <h3>5. What best describes your starting point?</h3>
+
+              <label class="option">
+                <input type="radio" name="q5" value="skills">
+                I have skills I can sell
+              </label>
+
+              <label class="option">
+                <input type="radio" name="q5" value="experience">
+                I have experience, but need direction
+              </label>
+
+              <label class="option">
+                <input type="radio" name="q5" value="zero">
+                I'm willing to learn from zero
+              </label>
+
+              <label class="option">
+                <input type="radio" name="q5" value="hobby">
+                I want to turn a hobby into income
+              </label>
+
+              <label class="option">
+                <input type="radio" name="q5" value="exploring">
+                I'm exploring — not sure yet
+              </label>
+            </div>
+
+            <div class="button-row">
+              <button type="submit" class="btn btn-primary">
+                Find My Niche
+              </button>
+
+              <button type="button" class="btn btn-secondary" id="clearNiche">
+                Clear
+              </button>
+            </div>
+
+          </form>
+
+          <div class="result" id="nicheResult" aria-live="polite"></div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- GLOBAL CURRENCY CALCULATOR -->
+    <section id="currency-calculator">
+      <div class="container">
+        <div class="section-card">
+
+          <div class="section-heading">
+            <h2>💰 Global Currency Calculator</h2>
+            <p>
+              Enter your hourly rate, choose your currencies, and see estimated
+              earnings automatically.
+            </p>
+          </div>
+
+          <div class="calculator-note">
+            <strong>Don't automatically accept a low-ball offer just because you need a sideline.</strong>
+            Starting small is okay. Undervaluing yourself is not.
+          </div>
+
+          <div class="calculator-grid">
+
+            <div class="currency-pair">
+
+              <div class="field">
+                <label for="startingCurrency">Starting Currency</label>
+
+                <select id="startingCurrency">
+                  <option value="USD">USD — US Dollar</option>
+                  <option value="PHP">PHP — Philippine Peso</option>
+                  <option value="EUR">EUR — Euro</option>
+                  <option value="GBP">GBP — British Pound</option>
+                  <option value="AUD">AUD — Australian Dollar</option>
+                  <option value="CAD">CAD — Canadian Dollar</option>
+                  <option value="SGD">SGD — Singapore Dollar</option>
+                  <option value="AED">AED — UAE Dirham</option>
+                  <option value="SAR">SAR — Saudi Riyal</option>
+                  <option value="JPY">JPY — Japanese Yen</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="targetCurrency">Target Currency</label>
+
+                <select id="targetCurrency">
+                  <option value="PHP">PHP — Philippine Peso</option>
+                  <option value="USD">USD — US Dollar</option>
+                  <option value="EUR">EUR — Euro</option>
+                  <option value="GBP">GBP — British Pound</option>
+                  <option value="AUD">AUD — Australian Dollar</option>
+                  <option value="CAD">CAD — Canadian Dollar</option>
+                  <option value="SGD">SGD — Singapore Dollar</option>
+                  <option value="AED">AED — UAE Dirham</option>
+                  <option value="SAR">SAR — Saudi Riyal</option>
+                  <option value="JPY">JPY — Japanese Yen</option>
+                </select>
+              </div>
+
+            </div>
+
+            <div class="field">
+              <label for="hourlyRate">Enter Hourly Rate</label>
+              <input
+                type="number"
+                id="hourlyRate"
+                min="0"
+                step="0.01"
+                placeholder="e.g. 8.55"
+              >
+              <span class="helper">Decimals are supported.</span>
+            </div>
+
+            <div class="field">
+              <label for="hoursPerDay">Enter Number of Hours per day</label>
+              <input
+                type="number"
+                id="hoursPerDay"
+                min="0"
+                step="0.5"
+                placeholder="e.g. 4"
+              >
+            </div>
+
+            <div class="field">
+              <label for="daysPerWeek">Enter Number of Days per week</label>
+              <input
+                type="number"
+                id="daysPerWeek"
+                min="0"
+                max="7"
+                step="1"
+                placeholder="e.g. 5"
+              >
+            </div>
+
+            <div class="field">
+              <label for="monthsPerYear">Enter Working months/Year</label>
+              <input
+                type="number"
+                id="monthsPerYear"
+                min="0"
+                max="12"
+                step="1"
+                placeholder="e.g. 12"
+              >
+            </div>
+
+          </div>
+
+          <div class="button-row">
+            <button class="btn btn-primary" id="calculateCurrency">
+              Calculate
+            </button>
+
+            <button class="btn btn-secondary" id="clearCurrency">
+              Clear
+            </button>
+          </div>
+
+          <div class="calculator-results" id="calculatorResults">
+
+            <div class="results-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Period</th>
+                    <th>Starting Currency</th>
+                    <th>Target Currency</th>
+                  </tr>
+                </thead>
+
+                <tbody id="resultsBody"></tbody>
+              </table>
+            </div>
+
+            <p class="disclaimer">
+              Based on 4.33 weeks per month. This is a planning estimate only.
+              Actual earnings may vary because of taxes, unpaid leave, platform
+              fees, payment fees, exchange-rate changes, and contract terms.
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- LEARNING SHELF -->
+    <section id="learning-shelf">
+      <div class="container">
+        <div class="section-card">
+
+          <div class="section-heading">
+            <h2>📚 Learning Shelf</h2>
+            <p>
+              Upskill, reskill, and grow — for free. Browse thousands of free
+              courses on Alison, one of the world's largest free learning platforms.
+            </p>
+          </div>
+
+          <div class="learning-grid">
+
+            <div class="learning-card">
+              <div class="icon">☕</div>
+              <h3>Explore FREE Courses</h3>
+              <p>
+                Discover free courses that can help you build practical skills
+                for work, freelancing, and personal growth.
+              </p>
+
+              <a
+                class="btn btn-primary btn-link"
+                href="https://alison.com/?utm_source=alison_user&utm_medium=affiliate&utm_campaign=42404117"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore FREE Courses
+              </a>
+            </div>
+
+            <div class="learning-card">
+              <div class="icon">🌱</div>
+              <h3>Alison Career Guide</h3>
+              <p>
+                The career you want tomorrow depends on the skills you build
+                today. Explore where you stand, where you could go, and courses
+                that may help you get there.
+              </p>
+
+              <a
+                class="btn btn-light btn-link"
+                href="https://alison.com/careers?utm_source=alison_user&utm_medium=affiliate&utm_campaign=42404117"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore Career Guide
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SHARE & REFER -->
+    <section id="share-refer">
+      <div class="container">
+        <div class="section-card">
+
+          <div class="section-heading">
+            <h2>🤎 Share &amp; Refer</h2>
+            <p>
+              Know someone who could benefit from Tabing Guhit? Share it with them.
+            </p>
+          </div>
+
+          <div class="share-box">
+
+            <button class="btn btn-primary" id="copyLink">
+              ☕ Copy Tabing Guhit Link
+            </button>
+
+            <div class="copy-status" id="copyStatus" aria-live="polite"></div>
+
+            <div class="copied-cup" id="copiedCup" aria-hidden="true">
+              ☕
+            </div>
+
+            <div class="social-buttons">
+
+              <a
+                class="btn btn-secondary btn-link"
+                href="https://www.facebook.com/profile.php?id=61580857530656"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Follow us on Facebook
+              </a>
+
+              <a
+                class="btn btn-light btn-link"
+                href="https://ph.pinterest.com/CathiesnestDigitalHub/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Follow along on Pinterest
+              </a>
+
+            </div>
+
+            <p class="helper" style="margin-top: 18px;">
+              Follow along on Pinterest for more from CathiesNest Digital.
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+
+      <div class="footer-logo" aria-hidden="true">
+        ☕
+      </div>
+
+      <h2>Tabing Guhit</h2>
+
+      <p>
+        Work with Purpose. Live with Balance. Lead with Gratitude.
+      </p>
+
+      <p>
+        A Gentle Digital Toolbox By CathiesNest Digital
+      </p>
+
+      <p class="footer-small">
+        © <span id="currentYear"></span> CathiesNest Digital
+      </p>
+
+    </div>
+  </footer>
+
+  <script>
+    /* ============================================
+       TABING GUHIT 3.0
+       Simple single-file functionality
+       ============================================ */
+
+    /* ---------- FIND YOUR NICHE ---------- */
+
+    const nicheForm = document.getElementById("nicheForm");
+    const nicheResult = document.getElementById("nicheResult");
+    const clearNiche = document.getElementById("clearNiche");
+
+    const nicheProfiles = {
+      admin: {
+        title: "Virtual Assistant & Administrative Support",
+        description:
+          "Your answers suggest that structured, behind-the-scenes work may suit you well.",
+        paths: [
+          "Virtual Assistant",
+          "Administrative Assistant",
+          "Calendar & Email Support",
+          "Data Entry / Research Support",
+          "Operations Assistant"
+        ]
+      },
+
+      customer: {
+        title: "Customer Support & Client Communication",
+        description:
+          "Your communication strengths could translate well into remote customer-facing roles.",
+        paths: [
+          "Customer Support Representative",
+          "Client Success Assistant",
+          "Chat or Email Support",
+          "Appointment Setter",
+          "Community Support"
+        ]
+      },
+
+      sales: {
+        title: "Sales, Marketing & Online Business Support",
+        description:
+          "You may have a good foundation for helping businesses attract customers and generate revenue.",
+        paths: [
+          "Social Media Assistant",
+          "Lead Generation",
+          "Appointment Setting",
+          "Affiliate Marketing",
+          "Digital Marketing Assistant"
+        ]
+      },
+
+      creative: {
+        title: "Creative & Digital Content",
+        description:
+          "Creative work appears to be a strong potential direction for you.",
+        paths: [
+          "Canva Designer",
+          "Social Media Content Creator",
+          "Pinterest Assistant",
+          "Digital Product Creator",
+          "Content Assistant"
+        ]
+      },
+
+      tech: {
+        title: "Teaching, Coaching & Technology",
+        description:
+          "Your interests suggest potential in skill-sharing, technology, and emerging digital tools.",
+        paths: [
+          "Online Tutor",
+          "Course Assistant",
+          "AI-Assisted Content Support",
+          "Tech Support",
+          "No-Code / AI Tool Assistant"
+        ]
+      }
+    };
+
+    function getAnswer(name) {
+      const selected = document.querySelector(
+        'input[name="' + name + '"]:checked'
+      );
+
+      return selected ? selected.value : null;
+    }
+
+    function buildNicheResult(answers) {
+      const profile = nicheProfiles[answers.q1] || nicheProfiles.admin;
+
+      let title = profile.title;
+      let description = profile.description;
+      let paths = [...profile.paths];
+      let tip = "";
+
+      /* Interest adjustment */
+      if (answers.q2 === "creative" && answers.q1 !== "creative") {
+        paths.unshift("Creative Virtual Assistant");
+      }
+
+      if (
+        (answers.q2 === "technology" || answers.q2 === "business") &&
+        answers.q1 === "admin"
+      ) {
+        paths.unshift("AI-Powered Virtual Assistant");
+      }
+
+      if (answers.q2 === "people" && answers.q1 === "customer") {
+        paths.unshift("Client Success Specialist");
+      }
+
+      if (answers.q2 === "business" && answers.q1 === "sales") {
+        paths.unshift("Online Business Assistant");
+      }
+
+      /* Time adjustment */
+      if (answers.q3 === "under1") {
+        tip =
+          "With less than an hour available each week, start very small. Focus on learning one useful skill or creating one simple portfolio sample rather than trying to build a full sideline immediately.";
+      } else if (answers.q3 === "1to5") {
+        tip =
+          "You have enough time to test one small direction. Choose one skill, practice consistently, and look for low-risk opportunities to gain experience.";
+      } else if (answers.q3 === "5to10") {
+        tip =
+          "You have a workable amount of time for a side project. Consider building a small portfolio and testing freelance or affiliate opportunities.";
+      } else if (answers.q3 === "10to20") {
+        tip =
+          "You have meaningful time available. You can begin building a stronger portfolio while testing paid opportunities.";
+      } else {
+        tip =
+          "With 20+ hours available, you can treat this more seriously as a potential freelance career or small online business.";
+      }
+
+      /* Goal adjustment */
+      if (answers.q4 === "remote") {
+        tip +=
+          " Since remote work is your main goal, prioritize skills that employers can easily evaluate through practical samples.";
+      }
+
+      if (answers.q4 === "freelance") {
+        tip +=
+          " For freelancing, start with one clearly defined service instead of trying to offer everything.";
+      }
+
+      if (answers.q4 === "business") {
+        tip +=
+          " For an online business, test demand before spending money on tools, courses, or inventory.";
+      }
+
+      if (answers.q4 === "learn") {
+        tip +=
+          " Since learning is your priority, choose a beginner-friendly course and create something practical with the skill you learn.";
+      }
+
+      /* Starting point */
+      if (answers.q5 === "zero") {
+        description +=
+          " Since you're willing to learn from zero, don't worry about mastering everything at once.";
+      }
+
+      if (answers.q5 === "experience") {
+        description +=
+          " Your existing experience can be valuable—you may need to translate it into a remote-friendly skill rather than start completely over.";
+      }
+
+      if (answers.q5 === "hobby") {
+        description +=
+          " A hobby can become a useful income stream when you connect it to a clear customer need.";
+      }
+
+      if (answers.q5 === "exploring") {
+        description +=
+          " You don't need to have everything figured out yet. Your first goal can simply be discovering what fits.";
+      }
+
+      return {
+        title,
+        description,
+        paths: [...new Set(paths)].slice(0, 6),
+        tip
+      };
+    }
+
+    nicheForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const answers = {
+        q1: getAnswer("q1"),
+        q2: getAnswer("q2"),
+        q3: getAnswer("q3"),
+        q4: getAnswer("q4"),
+        q5: getAnswer("q5")
+      };
+
+      const missing = Object.values(answers).some(
+        value => value === null
+      );
+
+      if (missing) {
+        nicheResult.classList.add("show");
+
+        nicheResult.innerHTML = `
+          <h3>☕ Almost there</h3>
+          <p>Please answer all five questions so we can give you a more useful result.</p>
+        `;
+
+        nicheResult.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+
+        return;
+      }
+
+      const result = buildNicheResult(answers);
+
+      nicheResult.innerHTML = `
+        <h3>Your Tabing Guhit Direction</h3>
+
+        <div class="result-title">${result.title}</div>
+
+        <p>${result.description}</p>
+
+        <strong>Possible paths to explore:</strong>
+
+        <ul>
+          ${result.paths.map(path => `<li>${path}</li>`).join("")}
+        </ul>
+
+        <div class="result-tip">
+          <strong>☕ Your next step:</strong>
+          <p style="margin-bottom: 0;">${result.tip}</p>
+        </div>
+      `;
+
+      nicheResult.classList.add("show");
+
+      nicheResult.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+    });
+
+    clearNiche.addEventListener("click", function() {
+      nicheForm.reset();
+      nicheResult.classList.remove("show");
+      nicheResult.innerHTML = "";
+    });
+
+
+    /* ---------- GLOBAL CURRENCY CALCULATOR ---------- */
+
+    /*
+      These are planning rates rather than live exchange rates.
+      They can be updated later without changing the calculator itself.
+
+      Base reference:
+      1 USD = 1 USD
+    */
+
+    const exchangeRates = {
+      USD: 1,
+      PHP: 58.50,
+      EUR: 0.85,
+      GBP: 0.73,
+      AUD: 1.53,
+      CAD: 1.38,
+      SGD: 1.28,
+      AED: 3.6725,
+      SAR: 3.75,
+      JPY: 147
+    };
+
+    const calculateCurrency =
+      document.getElementById("calculateCurrency");
+
+    const clearCurrency =
+      document.getElementById("clearCurrency");
+
+    const calculatorResults =
+      document.getElementById("calculatorResults");
+
+    const resultsBody =
+      document.getElementById("resultsBody");
+
+    function convertCurrency(amount, from, to) {
+      const amountInUSD = amount / exchangeRates[from];
+      return amountInUSD * exchangeRates[to];
+    }
+
+    function formatMoney(amount, currency) {
+      try {
+        return new Intl.NumberFormat(undefined, {
+          style: "currency",
+          currency: currency,
+          maximumFractionDigits: 2
+        }).format(amount);
+      } catch (error) {
+        return amount.toFixed(2) + " " + currency;
+      }
+    }
+
+    calculateCurrency.addEventListener("click", function() {
+
+      const from =
+        document.getElementById("startingCurrency").value;
+
+      const to =
+        document.getElementById("targetCurrency").value;
+
+      const hourlyRate =
+        parseFloat(document.getElementById("hourlyRate").value);
+
+      const hoursPerDay =
+        parseFloat(document.getElementById("hoursPerDay").value);
+
+      const daysPerWeek =
+        parseFloat(document.getElementById("daysPerWeek").value);
+
+      const monthsPerYear =
+        parseFloat(document.getElementById("monthsPerYear").value);
+
+      if (
+        !Number.isFinite(hourlyRate) ||
+        !Number.isFinite(hoursPerDay) ||
+        !Number.isFinite(daysPerWeek) ||
+        !Number.isFinite(monthsPerYear) ||
+        hourlyRate < 0 ||
+        hoursPerDay < 0 ||
+        daysPerWeek < 0 ||
+        monthsPerYear < 0
+      ) {
+        calculatorResults.classList.add("show");
+
+        resultsBody.innerHTML = `
+          <tr>
+            <td colspan="3">
+              Please enter valid numbers in all calculator fields.
+            </td>
+          </tr>
+        `;
+
+        return;
+      }
+
+      const daily = hourlyRate * hoursPerDay;
+      const weekly = daily * daysPerWeek;
+      const monthly = weekly * 4.33;
+      const annual = monthly * monthsPerYear;
+
+      const rows = [
+        ["Hourly", hourlyRate],
+        ["Daily", daily],
+        ["Weekly", weekly],
+        ["Monthly", monthly],
+        ["Annual", annual]
+      ];
+
+      resultsBody.innerHTML = rows
+        .map(row => `
+          <tr>
+            <td><strong>${row[0]}</strong></td>
+            <td>${formatMoney(row[1], from)}</td>
+            <td>${formatMoney(convertCurrency(row[1], from, to), to)}</td>
+          </tr>
+        `)
+        .join("");
+
+      calculatorResults.classList.add("show");
+
+      calculatorResults.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+    });
+
+    clearCurrency.addEventListener("click", function() {
+
+      document.getElementById("hourlyRate").value = "";
+      document.getElementById("hoursPerDay").value = "";
+      document.getElementById("daysPerWeek").value = "";
+      document.getElementById("monthsPerYear").value = "";
+
+      document.getElementById("startingCurrency").value = "USD";
+      document.getElementById("targetCurrency").value = "PHP";
+
+      calculatorResults.classList.remove("show");
+      resultsBody.innerHTML = "";
+    });
+
+
+    /* ---------- SHARE & REFER ---------- */
+
+    const copyLink =
+      document.getElementById("copyLink");
+
+    const copyStatus =
+      document.getElementById("copyStatus");
+
+    const copiedCup =
+      document.getElementById("copiedCup");
+
+    copyLink.addEventListener("click", async function() {
+
+      const link = window.location.href;
+
+      try {
+
+        await navigator.clipboard.writeText(link);
+
+        copyStatus.textContent =
+          "Copied! Share Tabing Guhit with someone who may benefit from it.";
+
+        copiedCup.classList.remove("show");
+
+        void copiedCup.offsetWidth;
+
+        copiedCup.classList.add("show");
+
+      } catch (error) {
+
+        copyStatus.textContent =
+          "Please copy the page link from your browser address bar.";
+
+        copiedCup.classList.remove("show");
+      }
+    });
+
+
+    /* ---------- YEAR ---------- */
+
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+
+  </script>
+
+</body>
+</html>
