@@ -402,13 +402,21 @@
       gap: 8px;
     }
 
+    .share-copy {
+      position: relative;
+      justify-content: center;
+    }
+
+    /* Link box hidden visually (kept in the page so copy still works) */
     .share-copy input {
-      flex: 1;
-      min-width: 0;
-      padding: 12px;
-      border: 1px solid #d8c1a0;
-      border-radius: 11px;
-      background: #fffdf7;
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      border: 0;
+      opacity: 0;
+      overflow: hidden;
+      pointer-events: none;
     }
 
     .copy-message {
@@ -500,6 +508,53 @@
       margin: 7px 0;
       color: #604838;
       font-size: 0.93rem;
+    }
+
+    /* EXPANDABLE / COLLAPSIBLE FOOTER SECTIONS */
+
+    .footer-content h3.footer-heading {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-toggle {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      padding: 0;
+      border: 1px solid rgba(74, 48, 36, 0.35);
+      border-radius: 50%;
+      background: transparent;
+      color: #4b2f22;
+      font-size: 0.7rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .footer-toggle:hover {
+      background: rgba(74, 48, 36, 0.1);
+    }
+
+    .footer-toggle:focus-visible {
+      outline: 2px solid #8c654b;
+      outline-offset: 2px;
+    }
+
+    .footer-toggle .arrow {
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+
+    .footer-toggle[aria-expanded="false"] .arrow {
+      transform: rotate(-90deg);
+    }
+
+    .footer-collapsible[hidden] {
+      display: none;
     }
 
     .footer-divider {
@@ -1218,80 +1273,113 @@
 
         <div>
 
-          <h3>
+          <h3 class="footer-heading">
+            <button
+              type="button"
+              class="footer-toggle"
+              aria-expanded="true"
+              aria-controls="footer-disclaimer"
+              aria-label="Toggle Disclaimer"
+            ><span class="arrow" aria-hidden="true">▼</span></button>
             Disclaimer
           </h3>
 
-          <p>
-            Tabing Guhit is not an employer, recruitment agency, financial
-            institution, or licensed financial adviser. All tools,
-            recommendations, and AI responses are for general educational
-            and self-development purposes only. Tabing Guhit does not
-            guarantee employment, income, or financial results. You remain
-            responsible for your own decisions.
-          </p>
+          <div class="footer-collapsible" id="footer-disclaimer">
+
+            <p>
+              Tabing Guhit is not an employer, recruitment agency, financial
+              institution, or licensed financial adviser. All tools,
+              recommendations, and AI responses are for general educational
+              and self-development purposes only. Tabing Guhit does not
+              guarantee employment, income, or financial results. You remain
+              responsible for your own decisions.
+            </p>
+
+          </div>
 
         </div>
 
         <div>
 
-          <h3>
+          <h3 class="footer-heading">
+            <button
+              type="button"
+              class="footer-toggle"
+              aria-expanded="true"
+              aria-controls="footer-about"
+              aria-label="Toggle About"
+            ><span class="arrow" aria-hidden="true">▼</span></button>
             About
           </h3>
 
-          <p>
-            <strong>
-              Use Tabing Guhit thoughtfully.
-            </strong>
-          </p>
+          <div class="footer-collapsible" id="footer-about">
 
-          <p>
-            Tabing Guhit is an informational and educational guide created
-            to provide simple tools and resources for learning,
-            self-development, career exploration, and personal planning.
-          </p>
+            <p>
+              <strong>
+                Use Tabing Guhit thoughtfully.
+              </strong>
+            </p>
 
-          <p>
-            It does not guarantee employment, clients, income, job placement,
-            or financial results. Currency conversions and earning estimates
-            are planning estimates only. Actual payments may differ because
-            of exchange rates, taxes, fees, unpaid time, contract terms,
-            and other circumstances.
-          </p>
+            <p>
+              Tabing Guhit is an informational and educational guide created
+              to provide simple tools and resources for learning,
+              self-development, career exploration, and personal planning.
+            </p>
+
+            <p>
+              It does not guarantee employment, clients, income, job placement,
+              or financial results. Currency conversions and earning estimates
+              are planning estimates only. Actual payments may differ because
+              of exchange rates, taxes, fees, unpaid time, contract terms,
+              and other circumstances.
+            </p>
+
+          </div>
 
         </div>
 
         <div>
 
-          <h3>
+          <h3 class="footer-heading">
+            <button
+              type="button"
+              class="footer-toggle"
+              aria-expanded="true"
+              aria-controls="footer-legal"
+              aria-label="Toggle Legal, privacy & disclosure"
+            ><span class="arrow" aria-hidden="true">▼</span></button>
             Legal, privacy & disclosure
           </h3>
 
-          <p>
-            Tabing Guhit itself is not an Alison Affiliate Partner.
-          </p>
+          <div class="footer-collapsible" id="footer-legal">
 
-          <p>
-            The Alison link shared on this website belongs to the site's owner,
-            who is a registered Alison Affiliate Partner and may earn a
-            commission from qualifying purchases or actions, at no extra cost
-            to you. This is a paid referral arrangement only. It does not
-            represent an endorsement by Alison or a partnership between
-            Tabing Guhit and Alison.
-          </p>
+            <p>
+              Tabing Guhit itself is not an Alison Affiliate Partner.
+            </p>
 
-          <p>
-            Course participation does not guarantee employment, income,
-            or career advancement. Please review the course information
-            and make your own decision before signing up.
-          </p>
+            <p>
+              The Alison link shared on this website belongs to the site's owner,
+              who is a registered Alison Affiliate Partner and may earn a
+              commission from qualifying purchases or actions, at no extra cost
+              to you. This is a paid referral arrangement only. It does not
+              represent an endorsement by Alison or a partnership between
+              Tabing Guhit and Alison.
+            </p>
 
-          <p>
-            AI responses are for general informational and educational
-            purposes only. Do not rely on AI responses as professional,
-            legal, medical, financial, or employment advice. No financial
-            inputs are permanently stored by this app.
-          </p>
+            <p>
+              Course participation does not guarantee employment, income,
+              or career advancement. Please review the course information
+              and make your own decision before signing up.
+            </p>
+
+            <p>
+              AI responses are for general informational and educational
+              purposes only. Do not rely on AI responses as professional,
+              legal, medical, financial, or employment advice. No financial
+              inputs are permanently stored by this app.
+            </p>
+
+          </div>
 
         </div>
 
@@ -1300,7 +1388,9 @@
       <div class="footer-divider"></div>
 
       <div class="copyright">
-        © 2026 CathiesNest Digital. Free. Simple. Device-friendly.
+        © 2026 CathiesNest Digital. All Rights Reserved.
+        <br>
+        All website code, designs, tools, content, and branding are the intellectual property of CathiesNest Digital. Unauthorized copying, redistribution, or commercial use without written permission is prohibited.
       </div>
 
     </div>
@@ -1845,10 +1935,54 @@
     }
 
     /* =========================
+       FOOTER EXPAND / COLLAPSE
+    ========================== */
+
+    function setFooterSection(button, expanded) {
+
+      const panel =
+        document.getElementById(
+          button.getAttribute("aria-controls")
+        );
+
+      button.setAttribute("aria-expanded", String(expanded));
+
+      if (panel) {
+        panel.hidden = !expanded;
+      }
+
+    }
+
+    function initFooterToggles() {
+
+      const buttons =
+        document.querySelectorAll(".footer-toggle");
+
+      buttons.forEach(button => {
+
+        // Start collapsed
+        setFooterSection(button, false);
+
+        button.addEventListener("click", () => {
+
+          const isExpanded =
+            button.getAttribute("aria-expanded") === "true";
+
+          setFooterSection(button, !isExpanded);
+
+        });
+
+      });
+
+    }
+
+    /* =========================
        INITIALIZE
     ========================== */
 
     setShareLink();
+
+    initFooterToggles();
 
   </script>
 
